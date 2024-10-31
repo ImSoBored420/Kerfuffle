@@ -19,26 +19,36 @@ print("""\033[1;m
 		""")
 while True:
     menu = input("Input service to lookup?: ")
+    
+    #Facebook
     if menu == "1":
         while True: 
-            choose = input("name or phone number? (num): ")
+            choose = input("Name or phone number? (num): ")
             if choose == "num":
-                FBnum = input("phone number to look up with Facebook?: ")
+                FBnum = input("Phone number to look up with Facebook?: ")
                 webbrowser.open("https://www.facebook.com/search/top/?init=quick&q="+FBnum)
                 break
             elif choose == "name":
                 FBfirst = input("First name? (if none, press ENTER): ")
                 FBlast = input("Last name? (if none, press ENTER): ")
-                webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}")
+                FBlocation = input("Do you know the general location of the person? (yes/no): ")
+                if FBlocation == "no" or FBlocation == "n":
+                    webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}")
+                elif FBlocation == "yes" or FBlocation == "y":
+                    FBlocation = input("What is the general location of the person?: ")
+                    print("\nbet\n")
+                    webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}+{FBlocation}")
                 break
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
+    
+    #Twitter 
     elif menu == "2":
         while True:
-            choose = input("name or phone number? (num): ")
+            choose = input("Name or phone number? (num): ")
             if choose == "num":
-                TWnum = input("phone number to look up with Twitter?: ")
+                TWnum = input("Phone number to look up with Twitter?: ")
                 webbrowser.open("https://twitter.com/search?q="+TWnum)
                 break
             elif choose == "name":
@@ -49,12 +59,14 @@ while True:
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
+    
+    #Whitepages (The GOAT)
     elif menu == "3":
         while True:
-            choose = input("name or phone number? (num): ")
+            choose = input("Name or phone number? (num): ")
             if choose == "num":
-                WPnum = input("phone number to look up with Whitepages?: ")
-                webbrowser.open("https://www.whitepages.com/phone/"+WPnum)
+                WPnum = input("Phone number to look up with Whitepages?: ")
+                webbrowser.open(f"https://www.whitepages.com/phone/{WPnum}")
                 break
             elif choose == "name":
                 WPfirst = input("First name? (if none, press ENTER): ")
@@ -64,9 +76,13 @@ while True:
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
+
+    #About
     elif menu == "99":
-        print("""\033[1;34mOne of the most simplistic and sub-par lookup tools ever made, mostly out of boredom. Input numbers and who you wanna find, and the OSINT gods bestow their knowledege upon thee (if any).\033[1;m""")
+        print("""\033[1;34mOne of the most simplistic and sub-par lookup tools ever made, mostly out of boredom. Input the name and/or number(s) of who you wanna find, and the OSINT gods bestow their knowledege upon thee (if any).\033[1;m""")
         time.sleep(1.5)
+    
+    #Exit
     elif menu == "0":
         print("""\033[1;34mThanks for using this ig!""")
         time.sleep(0.5)
