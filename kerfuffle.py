@@ -105,6 +105,7 @@ while True:
                 Goccupation = input("What about their job/occupation? (if none or don't know, press ENTER): ")
                 print("\033[1;35m\n bet \n")
                 webbrowser.open(f"https://www.google.com/search?q={Gfullname}+{Gnum}+{Glocation}+{Goccupation}")
+                break
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
