@@ -1,7 +1,7 @@
 import webbrowser
 import time
 import os
-import abbreviate
+import abbreviate #omg it's a custom import I'm so good hacker man :sunglasses:
 
 while True:
     print("""\033[1;35m
@@ -26,6 +26,7 @@ while True:
     #Facebook
     if menu == "1":
         while True: 
+            
             choose = input("Name or phone number? (num): ")
             if choose == "num":
                 FBnum = input("Phone number to look up with Facebook?: ")
@@ -51,6 +52,7 @@ while True:
     #Twitter 
     elif menu == "2":
         while True:
+            
             choose = input("Name or phone number? (num): ")
             if choose == "num":
                 TWnum = input("Phone number to look up with Twitter?: ")
@@ -89,6 +91,7 @@ while True:
     #Google
     elif menu == "4":
         while True:
+            
             choose = input("name, phone number or both? (phone number only is 'num'): ")
             if choose == "name":
                 Gfullname = input("Just give me their full name (if none, press ENTER, but that'd be goofy): ")
@@ -116,6 +119,7 @@ while True:
     #USPhoneLookup
     elif menu == "5":
         while True:
+            
             choose = input("This service is exclusively for phone numbers only located in the United States. Would you like to go back? (yes/no): ")
             if choose == "yes" or choose == "y":
                print("\033[1;35m\nbet \n") 
@@ -139,6 +143,7 @@ while True:
     #searchpeoplefree
     elif menu == "6":
         while True:
+            
             choose = input("name, name and general location, or number? (name and general location is 'both', and number is 'number'): ")
             if choose == "name":
                 SPFname = input("name?: ")
@@ -194,6 +199,7 @@ while True:
             else:
                 print("Invalid Input!")
                 time.sleep(1)       
+                
     #The short awaited and very buggy experimental all option
     elif menu == "98":
         print("""
@@ -265,10 +271,12 @@ Still ©2024 Inf Potentiality""")
                         os.system(f"start cmd /k ping {target} -l {size}")
                     print("Done")
                     break
+                
             #Extra About
             elif EXmenu == "99":
                 print("This is a continuation to the unpopular program by me, Kerfuffle. Now instead of JUST info gathering, there are even more sub-par things to do!")
                 time.sleep(1.5)
+                
             #Extra Exit
             elif EXmenu == "0":
                 print("\033[1;34mReturning to menu...")
