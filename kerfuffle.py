@@ -135,10 +135,11 @@ while True:
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
+                
     #searchpeoplefree
     elif menu == "6":
         while True:
-            choose = input("name? or name and general location? (name and general location is 'both'): ")
+            choose = input("name, name and general location, or number? (name and general location is 'both', and number is 'number'): ")
             if choose == "name":
                 SPFname = input("name?: ")
                 print("\033[1;35m\nbet \n")
@@ -152,10 +153,44 @@ while True:
                 print("\033[1;35m\nbet \n")
                 webbrowser.open(f"https://www.searchpeoplefree.com/find/{SPFname}/{short_state}/{SPFcity}")
                 break
+            elif choose == "number":
+                SPFnumber = input("what's the number (no dashes or parenthesis for the area code): ")
+                print("\033[1;35m\nbet \n")
+                webbrowser.open(f"https://www.searchpeoplefree.com/phone-lookup/find/{SPFnumber}")
+                break
             else:
                 print("Invalid Input!")
                 time.sleep(1)
                 
+    #truepeoplesearch
+    elif menu == "7":
+        while True:
+            
+            print("""\033[1;36mCouple things:
+                           there are like a TON of options for this one so bear with me here:
+                           name, phone, address, and email.
+                           make your choice, and since I haven't implemented a way to use multiple at once, just use it multiple times?""")
+            choose = input("\033[1;choose: ")
+            if choose == "name":
+                TPSname = input("put in their full name: ")
+                print("\033[1;35m\nbet \n")
+                webbrowser.open(f"https://www.truepeoplesearch.com/results?name={TPSname}")
+                break
+            elif choose == "phone" or choose == "number":
+                TPSnumber = input("put in their phone number: ")
+                print("\033[1;35m\nbet \n")
+                webbrowser.open(f"https://www.truepeoplesearch.com/resultphone?phoneno={TPSnumber}")
+                break
+            elif choose == "address":
+                TPSaddress = input("put in their home address: ")
+                print("\033[1;35m\nbet \n")
+                webbrowser.open(f"https://www.truepeoplesearch.com/resultaddress?streetaddress={TPSaddress}")
+                break
+            elif choose == "email":
+                TPSemail = input("put in their email address")
+                print("\033[1;35m\nbet \n")
+                webbrowser.open(f"https://www.truepeoplesearch.com/resultemail?email={TPSemail}")
+                break          
     #The short awaited and very buggy experimental all option
     elif menu == "98":
         print("""
