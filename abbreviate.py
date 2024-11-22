@@ -50,7 +50,13 @@ list = {
 "west virginia":"WV",
 "wyoming":"WY",
 }
-
 def abbreviate_state(output):
-    abbreviate = list.get(f"{output}") 
-    return abbreviate
+        abbreviate = list.get(f"{output}") 
+        return abbreviate
+if __name__ == "__main__":
+    def abbreviate_state(output):
+        abbreviate = list.get(f"{output}") 
+        return abbreviate
+if __name__ != "__main__":
+    print("kendricdjfdkxl")
+    
