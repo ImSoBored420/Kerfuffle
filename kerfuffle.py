@@ -190,7 +190,10 @@ while True:
                 TPSemail = input("put in their email address")
                 print("\033[1;35m\nbet \n")
                 webbrowser.open(f"https://www.truepeoplesearch.com/resultemail?email={TPSemail}")
-                break          
+                break   
+            else:
+                print("Invalid Input!")
+                time.sleep(1)       
     #The short awaited and very buggy experimental all option
     elif menu == "98":
         print("""
