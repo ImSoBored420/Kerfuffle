@@ -53,10 +53,4 @@ list = {
 def abbreviate_state(output):
         abbreviate = list.get(f"{output}") 
         return abbreviate
-if __name__ == "__main__":
-    def abbreviate_state(output):
-        abbreviate = list.get(f"{output}") 
-        return abbreviate
-if __name__ != "__main__":
-    print("kendricdjfdkxl")
     
