@@ -1,4 +1,4 @@
-list = {
+list:dict = {
 "alaska":"AK",
 "alabama":"AL",
 "arkansas":"AR",
@@ -25,32 +25,33 @@ list = {
 "missouri":"MO",
 "mississippi":"MS",
 "montana":"MT",
-"north carolina":"NC",
+"north carolina" or "northcarolina":"NC",
 "north dakota":"ND",
 "nebraska":"NE",
-"new hampshire":"NH",
-"new jersey":"NJ",
-"new mexico":"NM",
+"new hampshire" or "newhampshire":"NH",
+"new jersey" or "newjersey":"NJ",
+"new mexico" or "newmexico":"NM",
 "nevada":"NV",
-"new york":"NY",
+"new york" or "newyork":"NY",
 "ohio":"OH",
 "oklahoma":"OK",
 "oregon":"OR",
 "pennsylvania":"PA",
-"rhode island":"RI",
-"south carolina":"SC",
-"south dakota":"SD",
+"rhode island" or "rhodeisland":"RI",
+"south carolina" or "southcarolina":"SC",
+"south dakota" or "southdakota":"SD",
 "tennessee":"TN",
 "texas":"TX",
 "utah":"UT",
 "virginia":"VA",
 "vermont":"VT",
 "washington":"WA",
-"Wisconsin":"WI",
+"wisconsin":"WI",
 "west virginia":"WV",
 "wyoming":"WY",
 }
 def abbreviate_state(output):
-        abbreviate = list.get(f"{output}") 
+        abbreviate = dict.get(f"{output}") 
         return abbreviate
+
     
