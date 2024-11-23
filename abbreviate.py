@@ -1,4 +1,4 @@
-list:dict = {
+stateDictionary: dict = {
 "alaska":"AK",
 "alabama":"AL",
 "arkansas":"AR",
@@ -51,7 +51,11 @@ list:dict = {
 "wyoming":"WY",
 }
 def abbreviate_state(output):
-        abbreviate = dict.get(f"{output}") 
+        try:
+                abbreviate = stateDictionary.get(output)
+        except TypeError:
+                # this shit returns "None" and idk how to fix it
+                return
         return abbreviate
 
     

@@ -23,7 +23,7 @@ while True:
 ==============================
 \033[1;36m    99. About\033[1;33m   100. Other Tools    0. Exit\033[1;m
 		""")
-    menu = input("\033[1;mInput service to lookup?: ")
+    menu: str = input("\033[1;mInput service to lookup?: ")
     
     #Facebook
     if menu == "1":
@@ -88,7 +88,7 @@ while True:
                 print("Invalid Input!")
                 time.sleep(1)
     
-    #Whitepages (The GOAT)
+    #Whitepages (The GOAT)((even doe free people search is better o algo))
     elif menu == "3":
         while True:
             choose = input("Name or phone number? (num): ")
@@ -158,7 +158,6 @@ while True:
             else: 
                 print("Invalid Input!")
                 time.sleep(1)
-                
     #searchpeoplefree
     elif menu == "6":
         while True:
@@ -173,7 +172,7 @@ while True:
                 SPFname = input("name?: ")
                 print("by the way the program might tweak if you use something uppercase (fixed but I don't wanna get rid of this print)")
                 SPFlocation = input("location? (only the state): ")
-                SPFlocation2 = SPFlocation.lower
+                SPFlocation2 = SPFlocation.lower()
                 short_state = abbreviate.abbreviate_state(f"{SPFlocation2}")
                 SPFcity = input("city/town?: ") 
                 print("\033[1;35m\nbet \n")
@@ -219,7 +218,7 @@ while True:
                 break   
             else:
                 print("Invalid Input!")
-                time.sleep(1)       
+                time.sleep(1)
                 
     #The short awaited and very buggy experimental all option
     elif menu == "98":
