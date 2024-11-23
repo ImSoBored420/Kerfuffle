@@ -3,6 +3,8 @@ import time
 import os
 import abbreviate #omg it's a custom import I'm so good hacker man :sunglasses:
 
+log = open("logs.txt", "a")
+log.write("Kerfuffle Opened\n")
 while True:
     print("""\033[1;35m
  ____  __.             _____       _____  _____.__           
@@ -25,27 +27,44 @@ while True:
     
     #Facebook
     if menu == "1":
+        log.write("Option Facebook Chosen\n")
+        
         while True: 
             
             choose = input("Name or phone number? (num): ")
             if choose == "num":
+                log.write("Facebook option 'num' chosen\n")
+                
                 FBnum = input("Phone number to look up with Facebook?: ")
+                log.write(f"Facebook phone number inputted: '{FBnum}'\n")
                 print("\033[1;35m\n bet \n")
                 webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBnum}")
+                log.write(f"Facebook link opened: 'https://www.facebook.com/search/top/?init=quick&q={FBnum}'\n")
+                log.close()
                 break
             elif choose == "name":
                 FBfirst = input("First name? (if none, press ENTER): ")
                 FBlast = input("Last name? (if none, press ENTER): ")
+                log.write(f"Facebook name inputted '{FBfirst}' + '{FBlast}'\n")
                 FBlocation = input("Do you know the general location of the person? (yes/no): ")
                 if FBlocation == "no" or FBlocation == "n":
+                    log.write("Facebook location option 'no' chosen\n")
                     print("\033[1;35m\nbet \n")
                     webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}")
+                    log.write(f"Facebook link opened: 'https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}'\n")
+                    log.close()
+                    break
                 elif FBlocation == "yes" or FBlocation == "y":
+                    log.write("Facebook location option 'yes' chosen\n")
                     FBlocation = input("What is the general location of the person?: ")
+                    log.write(f"Facebook location inputted '{FBlocation}'\n")
                     print("\033[1;35m\nbet \n")
                     webbrowser.open(f"https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}+{FBlocation}")
-                break
+                    log.write(f"Facebook link opened: 'https://www.facebook.com/search/top/?init=quick&q={FBfirst}+{FBlast}+{FBlocation}'\n")
+                    log.close()
+                    break
             else: 
+                log.write("Invalid input chosen \n")
                 print("Invalid Input!")
                 time.sleep(1)
     
@@ -152,8 +171,10 @@ while True:
                 break
             elif choose == "both":
                 SPFname = input("name?: ")
+                print("by the way the program might tweak if you use something uppercase (fixed but I don't wanna get rid of this print)")
                 SPFlocation = input("location? (only the state): ")
-                short_state = abbreviate.abbreviate_state(f"{SPFlocation}")
+                SPFlocation2 = SPFlocation.lower
+                short_state = abbreviate.abbreviate_state(f"{SPFlocation2}")
                 SPFcity = input("city/town?: ") 
                 print("\033[1;35m\nbet \n")
                 webbrowser.open(f"https://www.searchpeoplefree.com/find/{SPFname}/{short_state}/{SPFcity}")
@@ -254,7 +275,7 @@ Still ©2024 Inf Potentiality""")
 \033[1;36m    99. About\033[1;33m 0. Exit\033[1;m
 """)
         while True:
-            EXmenu = input("\033[1;mInput service to run?: ")
+            EXmenu = int(input("\033[1;mInput service to run?: "))
             
             if EXmenu == "1":
                 while True:
@@ -268,7 +289,7 @@ Still ©2024 Inf Potentiality""")
                         break
                     times = int(input("How many instances would you like to be ran?: "))
                     for i in range(times):
-                        os.system(f"start cmd /k ping {target} -l {size}")
+                        os.system(f"start cmd /k ping {target} -l {size} -t")
                     print("Done")
                     break
                 
