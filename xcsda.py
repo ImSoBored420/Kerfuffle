@@ -50,8 +50,13 @@ list:dict = {
 "west virginia":"WV",
 "wyoming":"WY",
 }
+output:str = input("state> ")
 def abbreviate_state(output):
         abbreviate = list.get(f"{output}") 
+        if output is list:
+            print("here")
+        if output is not list:
+            print("not here")
         return abbreviate
 
     
