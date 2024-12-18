@@ -51,10 +51,6 @@ stateDictionary: dict = {
 "wyoming":"WY",
 }
 def abbreviate_state(output):
-        try:
-                abbreviate = stateDictionary.get(output)
-        except TypeError:
-                # this shit returns "None" and idk how to fix it
-                return
+        abbreviate = stateDictionary.get(output)
         return abbreviate
 
