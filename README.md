@@ -1,3 +1,16 @@
+##########################
+Hey this shit's depricated
+##########################
+
+
+
+
+
+
+
+
+
+
 # Kerfuffle
 "One of the most sub-par lookup tools ever made or your money back!" - John "This Isn't My Real Name" Johnson
 
@@ -20,3 +33,4 @@ I think we're at 400 now?
 added spacing and type specification because those are all the rage
 
 ok bye
+
